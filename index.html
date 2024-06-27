@@ -6,9 +6,11 @@
     <title>Cool Stuff</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#header").load("header.html");
-        });
+        fetch('head.html')
+            .then(response => response.text())
+            .then(data => {
+                document.head.innerHTML = data;
+            });
     </script>
 </head>
 <body>
